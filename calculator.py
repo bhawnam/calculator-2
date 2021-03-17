@@ -18,33 +18,42 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 while True:
     choice = input("Enter your equation > ")
     token = choice.split(' ')
+    new_list =[]
+    
+    
+    for i in token[1:]:
+        i = float(i)
+        new_list.append(i)
+
     if token[0] == "q":
         print("We will exit")
         break
 
     elif token[0] == "+":
-        result = add(token[1],token[2])
-        
+        result = add(new_list[0],new_list[1])
+                
     elif token[0] == "-":
-        result =  subtract(token[1], token[2])
+        result =  subtract(new_list[0], new_list[1])
 
     elif token[0] == "*":
-        result = multiply(token[1],token[2])
-   
+        result = multiply(new_list[0],new_list[1])
+        
     elif token[0] == "/":
-        result = divide(token[1], token[2])
-    
+        result = divide(new_list[0], new_list[1])
+            
     elif token[0] == "square":
-        result = square(token[1])
+        result = square(new_list[0])
 
     elif token[0] == "cube":
-        result = cube(token[1])
+        result = cube(new_list[0])
 
     elif token[0] == "power":
-        result = power(token[1], token[2])
+        result = power(new_list[0], new_list[1])
 
     elif token[0] == "mod":
-        result = mod(token[1],token[2])
-#
+        result = mod(new_list[0],new_list[1])
+            
     else:
-        print(result)
+        print("Input was invalid")
+
+    print(result)
