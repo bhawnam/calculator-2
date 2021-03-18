@@ -16,7 +16,8 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 #             (...etc.)
 
 while True:
-    input_equation = input("Enter your equation > ")
+    input_string = input("Enter your equation > ")
+    input_equation = input_string.strip(" ")
     token = input_equation.split(' ')
     operand_list =[]
     
