@@ -16,42 +16,42 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 #             (...etc.)
 
 while True:
-    choice = input("Enter your equation > ")
-    token = choice.split(' ')
-    new_list =[]
+    input_equation = input("Enter your equation > ")
+    token = input_equation.split(' ')
+    operand_list =[]
     
     
-    for i in token[1:]:
-        i = float(i)
-        new_list.append(i)
+    for operand in token[1:]:
+        operand = float(operand)
+        operand_list.append(operand)
 
     if token[0] == "q":
         print("We will exit")
         break
 
     elif token[0] == "+":
-        result = add(new_list[0],new_list[1])
+        result = add(operand_list[0],operand_list[1])
                 
     elif token[0] == "-":
-        result =  subtract(new_list[0], new_list[1])
+        result =  subtract(operand_list[0], operand_list[1])
 
     elif token[0] == "*":
-        result = multiply(new_list[0],new_list[1])
+        result = multiply(operand_list[0],operand_list[1])
         
     elif token[0] == "/":
-        result = divide(new_list[0], new_list[1])
+        result = divide(operand_list[0], operand_list[1])
             
     elif token[0] == "square":
-        result = square(new_list[0])
+        result = square(operand_list[0])
 
     elif token[0] == "cube":
-        result = cube(new_list[0])
+        result = cube(operand_list[0])
 
     elif token[0] == "power":
-        result = power(new_list[0], new_list[1])
+        result = power(operand_list[0], operand_list[1])
 
     elif token[0] == "mod":
-        result = mod(new_list[0],new_list[1])
+        result = mod(operand_list[0],operand_list[1])
             
     else:
         print("Input was invalid")
